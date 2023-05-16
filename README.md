@@ -1,7 +1,11 @@
  This is a set of modules for vibration analysis. the main module is:
 
 ```
-get_envelope_spectrum.py, get_fault_amplitude.py
+from bearing_watcher.demodulation import get_envelope_spectrum
+```
+
+```
+from bearing_watcher.demodulation import get_fault_amplitude
 ```
 
 usage:
