@@ -1,4 +1,4 @@
- This is a set of modules for vibration analysis. the main module is:
+ This is a set of modules for vibration analysis. the main modules:
 
 ```
 from bearing_watcher.demodulation import get_envelope_spectrum
