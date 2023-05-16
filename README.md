@@ -1,4 +1,4 @@
- This is a set of modules for vibration analysis. the main modules:
+ This is a set of modules for vibration analysis. The main modules:
 
 ```
 from bearing_watcher.demodulation import get_envelope_spectrum
@@ -28,3 +28,5 @@ fault_freq, fault_amp = get_fault_amplitude(frequency,
                                             fault_freq,
                                             error_threshold)
 ```
+
+I've added a Dash app for you to experiment with. Please install the required dependencies and execute the 'app.py' file. The parquet files include vibration samples derived from a run to-failure experiment,which resulted in an outer race defect in the bearing after approximately the 537th sample.
