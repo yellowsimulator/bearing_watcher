@@ -12,7 +12,7 @@ from pathlib import Path
 from demodulation import get_envelope_spectrum
 
 def sort_key(file):
-    # Extract the number from the filename
+    # sort files by the number in their name
     number = int(re.search(r'(\d+)', str(file)).group(1))
     return number
 
@@ -20,6 +20,7 @@ def sort_key(file):
 file_paths = Path('vibration')
 files = file_paths.glob('*.parquet')
 sorted_files = sorted(files, key=sort_key)
+
 # Initialize the app
 app = dash.Dash(__name__)
 
@@ -41,7 +42,7 @@ app.layout = html.Div(style={'backgroundColor': '#111111'}, children=[
     id='file-dropdown',
     # Create an option for each file
     options=[{'label': str(file), 'value': str(file)} for file in sorted_files],
-    value=str(sorted_files[0]) if files else None  # Default value is the first file, if there are any
+    value=str(sorted_files[0]) if files else None
     ),
 
     dcc.Graph(
@@ -68,7 +69,8 @@ def update_frequency_spectrum(file):
     df = pd.read_parquet(file)
     data = df['sample'].values
     freq, amps = get_envelope_spectrum(data)
-    frequency_value = 236.4
+    frequency_value = 236.4 # for BPFO Hz
+
     # Create the plot
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=freq[2:1000], y=amps[2:1000], mode='lines'))
