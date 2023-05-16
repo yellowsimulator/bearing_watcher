@@ -115,8 +115,7 @@ def get_fault_amplitude(freqs: np.ndarray,
     min_diff_idx = np.argmin(differences)
     if differences[min_diff_idx] <= error_threshold:
         return freqs[min_diff_idx], amps[min_diff_idx]
-    else:
-        return None
+    return None
 
 
 if __name__ == '__main__':
