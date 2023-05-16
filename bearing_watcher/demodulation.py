@@ -7,7 +7,7 @@ import scipy
 from scipy import integrate
 import matplotlib.pyplot as plt
 from cheby_filters import get_cheby_band_pass_filtered_signal
-from butter_filters import get_butter_low_pass_filtered_signal
+from cheby_filters import get_cheby_low_pass_filtered_signal
 
 
 def get_signal_envelop(input_signal: np.ndarray) -> np.ndarray:
@@ -87,7 +87,7 @@ def get_envelope_spectrum(input_signal: np.ndarray,
     band_passed_signal = get_cheby_band_pass_filtered_signal(input_signal, low_cut,
                          high_cut, sampling_freq, order)
     envelop = get_signal_envelop(band_passed_signal)
-    low_passed_signal = get_butter_low_pass_filtered_signal(envelop, low_cut, sampling_freq, order)
+    low_passed_signal = get_cheby_low_pass_filtered_signal(envelop, low_cut, sampling_freq, order)
     _, freq, amplitude = get_fft(low_passed_signal)
     return freq, amplitude
 
