@@ -164,12 +164,4 @@ def get_cheby_high_pass_filtered_signal(input_signal: np.ndarray,
 
 
 if __name__ == '__main__':
-    fs = 5000.0
-    low_cut = 500.0
-    high_cut = 1250.0
-    for order in [2, 3, 14, 15, 20]:
-        sos = cheby_band_pass(low_cut, high_cut, fs=fs, order=order)
-        w, h = sosfreqz(sos, worN=2000)
-        plt.plot(w, abs(h), label=f"order = {order}" )
-    plt.legend(loc='best')
-    plt.show()
+    ...
