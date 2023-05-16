@@ -101,15 +101,15 @@ def get_fault_amplitude(freqs: np.ndarray,
 
     Parameters:
     ----------
-        freqs: Frequency spectrum
-        amps: corrsponding amplitudes
-        ffault_freqt: theoretical fault frequency
-        error_threshold: threshold for the error in Hz
+    freqs: Frequency spectrum
+    amps: corrsponding amplitudes
+    ffault_freqt: theoretical fault frequency
+    error_threshold: threshold for the error in Hz
 
     Returns:
     ----------
-        fault_freq: frequency of fault
-        fault_amplitude: amplitude of fault frequency
+    fault_freq: frequency of fault
+    fault_amplitude: amplitude of fault frequency
     """
     differences = np.abs(freqs - fault_freq)
     min_diff_idx = np.argmin(differences)
