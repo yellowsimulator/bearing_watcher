@@ -5,6 +5,9 @@ import numpy as np
 def get_ims_data(experiment_number: int, bearing_number: int):
     """Return the data for a given experiment and bearing number.
 
+    Note: The data is from the IMS bearing dataset.
+    and it used to test this module.
+
     Parameters
     ----------
     experiment_number : The experiment number.
