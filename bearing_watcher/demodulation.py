@@ -51,7 +51,7 @@ def get_fft(input_signal: np.ndarray) -> Union[np.ndarray, np.ndarray]:
     N = len(input_signal)
     frequencies = np.fft.fftfreq(N, d=1./N)
     frequencies_resized = frequencies[: N//2]
-    amplitude = (np.abs(signal_fft[: N//2]) / N)
+    amplitude = (np.abs(signal_fft[: N//2]) / N)*9.81
     return signal_fft, frequencies_resized, amplitude
 
 
