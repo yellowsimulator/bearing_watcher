@@ -19,9 +19,6 @@ def cheby_band_pass(low_cut: float, high_cut: float,
     sos : ndarray
         Second-order sections representation of the filter.
     """
-    # nyq = 0.5 * fs
-    # low = low_cut / nyq
-    # high = high_cut / nyq
     sos = scipy.signal.cheby1(N=order, rp=1, Wn=[low_cut, high_cut],
           analog=False, btype='band', output='sos', fs=fs)
     return sos
@@ -41,8 +38,6 @@ def cheby_low_pass(low_cut: float, fs: float, order: int=5) -> np.ndarray:
     sos : ndarray
         Second-order sections representation of the filter.
     """
-    # nyq = 0.5 * fs
-    # low = low_cut / nyq
     sos = scipy.signal.cheby1(N=order, rp=1, Wn=low_cut,
           analog=False, btype='low', output='sos', fs=fs)
     return sos
