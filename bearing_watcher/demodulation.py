@@ -93,9 +93,9 @@ def get_envelope_spectrum(input_signal: np.ndarray,
 
 
 def get_peak(freqs: np.ndarray,
-                        amps: np.ndarray,
-                        fault_freq: float,
-                        error_threshold: float):
+             amps: np.ndarray,
+             searched_freq: float,
+             error_threshold: float):
     """
     Returns the amplitude of the fault frequency.
 
@@ -103,7 +103,7 @@ def get_peak(freqs: np.ndarray,
     ----------
     freqs: Frequency spectrum
     amps: corrsponding amplitudes
-    ffault_freqt: theoretical fault frequency
+    searched_freq: The peak frequency to be searched (Hz)
     error_threshold: threshold for the error in Hz
 
     Returns:
@@ -111,7 +111,7 @@ def get_peak(freqs: np.ndarray,
     fault_freq: frequency of fault
     fault_amplitude: amplitude of fault frequency
     """
-    differences = np.abs(freqs - fault_freq)
+    differences = np.abs(freqs - searched_freq)
     min_diff_idx = np.argmin(differences)
     if differences[min_diff_idx] <= error_threshold:
         return freqs[min_diff_idx], amps[min_diff_idx]
