@@ -92,7 +92,7 @@ def get_envelope_spectrum(input_signal: np.ndarray,
     return freq, amplitude
 
 
-def get_fault_amplitude(freqs: np.ndarray,
+def get_peak(freqs: np.ndarray,
                         amps: np.ndarray,
                         fault_freq: float,
                         error_threshold: float):

@@ -5,7 +5,7 @@ from bearing_watcher.demodulation import get_envelope_spectrum
 ```
 
 ```
-from bearing_watcher.demodulation import get_fault_amplitude
+from bearing_watcher.demodulation import get_peak
 ```
 
 usage:
@@ -23,7 +23,7 @@ For bearing fault detection you want to find the amplitude of a given fault (BPF
 ```
 fault_frequency = 234.6 #BPFO
 error_threshold = 0.5 # Hz
-fault_freq, fault_amp = get_fault_amplitude(frequency,
+fault_freq, fault_amp = get_peak(frequency,
                                             ampplitude,
                                             fault_freq,
                                             error_threshold)
