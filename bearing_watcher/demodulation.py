@@ -103,7 +103,7 @@ def get_peak(freqs: np.ndarray,
     ----------
     freqs: Frequency spectrum
     amps: corrsponding amplitudes
-    searched_freq: The peak frequency to be searched (Hz)
+    searched_freq: The peak frequency to be searched ()
     error_threshold: threshold for the error in Hz
 
     Returns:
