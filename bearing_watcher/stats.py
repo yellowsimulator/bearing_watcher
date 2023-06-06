@@ -49,8 +49,9 @@ def bayasian_testing(data: list, alpha_prior: float, beta_prior: float):
     """Performs a bayesian hypothesis testing.
 
     - Likelihood: Bernoulli
-    - Prior: Beta
-    - Beta and Bernoulli are conjugate distributions
+    - Prior: Beta (alpha, beta)
+    - Beta and Bernoulli are conjugate distributions:
+      (The posteriot is also a Beta distribution)
 
     Parameters:
     -----------
