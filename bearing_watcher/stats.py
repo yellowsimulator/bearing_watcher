@@ -51,7 +51,7 @@ def bayasian_testing(data: list, alpha_prior: float, beta_prior: float):
     - Likelihood: Bernoulli
     - Prior: Beta (alpha, beta)
     - Beta and Bernoulli are conjugate distributions:
-      (The posteriot is also a Beta distribution)
+      (The posterior is also a Beta distribution)
 
     Parameters:
     -----------
